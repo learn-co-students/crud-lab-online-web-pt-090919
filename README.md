@@ -18,15 +18,15 @@ component, even if they aren't actually displaying any visual content.
 
 ## Instructions
 
-1. Start off by working on the components for displaying restaurants. First, you'll need to
-create a __RestaurantsContainer__ component that will connect to Redux and pass
-the appropriate props down to its children. Then you will need a
-__RestaurantInput__ component that allows a user to create new restaurants. You
-will then want to create a __Restaurants__ component that displays a list of
+1. Start off by working on the components for displaying restaurants. 
+- First, you'll need to create a __RestaurantsContainer__ component that will connect to Redux [DONE]
+- and pass the appropriate props down to its children. [DONE]
+- Then you will need a __RestaurantInput__ component that allows a user to create new restaurants. [DONE]
+- You will then want to create a __Restaurants__ component that displays a list of
 restaurants, and a __Restaurant__ component which is responsible for each
-restaurant (and contains the button to _delete_). Users should also be able to
-delete restaurants. To implement this, you will need to give each restaurant
-an ID.
+restaurant (and contains the button to _delete_). 
+
+- Users should also be able to delete restaurants. To implement this, you will need to give each restaurant an ID.
 
 **Note**: To implement IDs, it may be worth integrating another library in the
 reducer called cuid. You can see that we already imported it in the reducer
@@ -39,8 +39,8 @@ file for you. The library will generate a unique id for you:
   // ch72gsb320000udocl363eofy
   ```
 
-For simplicity with testing, restaurant data stored in Redux should have `text`
-and `id` keys.
+**** For simplicity with testing, restaurant data stored in Redux should have `text`
+and `id` keys. ****
 
 2. You will also need to create a reviews resource. Similar to the components
 for Restaurant, users should be able to create a review that is specifically
