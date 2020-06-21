@@ -1,44 +1,38 @@
 import React, { Component } from 'react';
-import { cuidFn } from '../../reducers/manageRestaurant'
 
 class RestaurantInput extends Component {
+
   constructor(props) {
-    super(props) 
+    super(props);
 
     this.state = {
-      id: cuidFn(),
       text: ''
-    }
+    };
+  };
+
+  handleOnChange(event) {
+    this.setState({
+      text: event.target.value,
+    });
   }
 
-  handleChange = event => {
+  handleOnSubmit(event) {
+    event.preventDefault();
+    this.props.addRestaurant(this.state.text)
     this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
-
-  handleSubmit = event => {
-    const { id, text } = this.state
-    this.props.addRestaurant(id, text)
-    this.setState({
-      id: cuidFn(),
       text: ''
-    })
-
-    event.preventDefault()
+    });
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"
-            name="text" 
             value={this.state.text}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Submit</button>
+            onChange={(event) => this.handleOnChange(event)} />
+          <input type="submit" />
         </form>
       </div>
     );
