@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import Review from './Review';
 
 class Reviews extends Component {
+  
   render() {
     return (
       <ul>
-        Reviews
+        {this.props.reviews.map(rev =>
+          <Review review={rev} delRev={this.props.delRev} />
+        )}
       </ul>
     );
   }

@@ -9,11 +9,13 @@ class Restaurant extends Component {
 
     return (
       <div>
+        ---
         <li>
           {restaurant.text}
-          <button> X </button>
-          <ReviewsContainer restaurant={restaurant}/>
+          <button onClick={() => this.props.delRest(this.props.restaurant.id)} > X </button>
+          <ReviewsContainer restaurantId={restaurant.id}/>
         </li>
+        ---
       </div>
     );
   }
